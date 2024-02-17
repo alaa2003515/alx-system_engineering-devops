@@ -9,4 +9,4 @@ fi
 ping_result=$(ping -c 5 "$1")
 
 # Display the ping result
-echo "$ping_result"
+echo "$ping_result" | sed -n '/PING/,/ms/p'
